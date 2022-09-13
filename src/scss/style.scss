@@ -27,7 +27,7 @@
       display: grid;
       grid-template-rows: repeat(4, 1fr);
       grid-template-columns: repeat(2, 1fr);
-      gap: 0.8rem;
+      gap: 1.5rem 1rem;
       padding: 0.5rem;
       grid-template-areas:
         "firstname lastname"
@@ -60,8 +60,25 @@
           "label icon"
           "input icon";
         align-items: center;
+        position: relative;
+        &.active {
+          border: 0.15rem $color-danger solid !important;
+          grid-area: email;
+        }
+        &.activepassword {
+          border: 0.15rem $color-danger solid !important;
+          grid-area: password;
+        }
         &:focus-within {
-          border: 0.1rem $color-primary solid;
+          border: 0.15rem $color-primary solid;
+        }
+        .error {
+          position: absolute;
+          bottom: 0;
+          left: 1rem;
+          color: $color-danger;
+          font-size: 0.8rem;
+          transform: translate(0, 1.5rem);
         }
         label {
           grid-area: label;
