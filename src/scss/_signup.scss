@@ -1,0 +1,100 @@
+.signup--form {
+  // background: grey;
+  opacity: 0.8;
+  max-width: 50%;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
+  padding: 0.5rem;
+  grid-template-areas:
+    "firstname lastname"
+    "email email"
+    "password password"
+    "buttons-a buttons-b";
+  .firstname {
+    grid-area: firstname;
+  }
+  .lastname {
+    grid-area: lastname;
+  }
+  .email {
+    grid-area: email;
+  }
+  .password {
+    grid-area: password;
+  }
+  .submit {
+    grid-area: buttons-b;
+    background: $color-primary;
+  }
+  .change {
+    grid-area: buttons-a;
+    background: $color-bg-light;
+  }
+  .pry-btn {
+    border-radius: $border-radius-4;
+    border: none;
+    color: $color-info;
+    font-size: 1rem;
+  }
+  span {
+    background: $color-bg;
+    border-radius: $border-radius-2;
+    padding: 0.5rem 1rem;
+    display: grid;
+    grid-template-rows: 1fr 1.3fr;
+    grid-template-columns: auto 1rem;
+    grid-template-areas:
+      "label icon"
+      "input icon";
+    align-items: center;
+    position: relative;
+    &.active {
+      border: 0.15rem $color-danger solid !important;
+      grid-area: email;
+    }
+    &.activepassword {
+      border: 0.15rem $color-danger solid !important;
+      grid-area: password;
+    }
+    &:focus-within {
+      border: 0.15rem $color-primary solid;
+    }
+
+    .error {
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+      color: $color-danger;
+      font-size: 0.8rem;
+      transform: translate(0, 1.5rem);
+    }
+    label {
+      grid-area: label;
+      color: $color-bg-light;
+      font-weight: 600;
+    }
+    .form--icons {
+      grid-area: icon;
+      display: grid;
+      color: $color-info;
+      cursor: pointer;
+    }
+    .signup--input {
+      grid-area: input;
+      border: none;
+      background: transparent;
+      color: $color-info;
+      outline: none;
+      &:focus + label {
+        color: $color-primary;
+      }
+
+      &::placeholder {
+        color: $color-info;
+        font-weight: 200;
+      }
+    }
+  }
+}
