@@ -9,9 +9,17 @@ export interface SignupComponent {
 const App: React.FC = () => {
   return (
     <section className="Signup">
+      <header>
+        <nav>
+          <span>BlindInc</span>
+          <span>Home</span>
+          <span>Join</span>
+        </nav>
+      </header>
       <h2>Create new account.</h2>
       <small>Already A Member? Log In</small>
       <Signup />
+      <div>Logo</div>
     </section>
   );
 };
