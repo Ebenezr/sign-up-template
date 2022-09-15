@@ -1,14 +1,15 @@
 .signup--form {
   // background: grey;
   opacity: 0.8;
-  max-width: 50%;
+  max-width: 100%;
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem 1rem;
-  padding: 0.5rem;
+  gap: 2rem 1rem;
+  padding: 0;
   grid-template-areas:
-    "firstname lastname"
+    "firstname firstname"
+    "lastname lastname"
     "email email"
     "password password"
     "buttons-a buttons-b";
@@ -33,7 +34,7 @@
     background: $color-bg-light;
   }
   .pry-btn {
-    border-radius: $border-radius-4;
+    border-radius: $border-radius-2;
     border: none;
     color: $color-info;
     font-size: 1rem;
@@ -49,6 +50,7 @@
       "label icon"
       "input icon";
     align-items: center;
+
     position: relative;
     &.active {
       border: 0.15rem $color-danger solid !important;
@@ -65,10 +67,12 @@
     .error {
       position: absolute;
       bottom: 0;
-      left: 1rem;
+      left: 0;
       color: $color-danger;
       font-size: 0.8rem;
-      transform: translate(0, 1.5rem);
+      transform: translate(0, 1.7rem);
+      text-align: center;
+      line-height: 0.7rem;
     }
     label {
       grid-area: label;
