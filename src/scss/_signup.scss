@@ -42,15 +42,15 @@
   span {
     background: $color-bg;
     border-radius: $border-radius-2;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 1rem;
     display: grid;
-    grid-template-rows: 1fr 1.3fr;
-    grid-template-columns: auto 1rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto 2rem;
     grid-template-areas:
       "label icon"
       "input icon";
     align-items: center;
-
+    border: 0.15rem $color-bg solid;
     position: relative;
     &.active {
       border: 0.15rem $color-danger solid !important;
@@ -76,14 +76,22 @@
     }
     label {
       grid-area: label;
+      height: auto;
       color: $color-bg-light;
       font-weight: 600;
     }
-    .form--icons {
+    button {
       grid-area: icon;
+      background: transparent;
       display: grid;
-      color: $color-info;
-      cursor: pointer;
+      place-items: center;
+      border: none;
+      .form--icons {
+        font-size: 1.5rem;
+        display: grid;
+        color: $color-info;
+        cursor: pointer;
+      }
     }
     .signup--input {
       grid-area: input;

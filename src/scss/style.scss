@@ -24,7 +24,26 @@
 
     header {
       color: $color-info;
-      height: auto;
+      nav {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        span {
+          display: flex;
+          gap: 0.5rem;
+          padding: 0.5rem 0.2rem;
+          justify-content: right;
+          align-items: center;
+          &:first-of-type {
+            color: $color-primary;
+            justify-self: left;
+            font-weight: 700;
+          }
+          .logo__icon {
+            color: $color-primary;
+            font-size: 1.5rem;
+          }
+        }
+      }
     }
     h2 {
       color: $color-info;

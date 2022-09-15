@@ -71,7 +71,9 @@ const Signup: React.FC = () => {
           required
         />
         <label>First name</label>
-        <MdContacts className="form--icons" />
+        <button>
+          <MdContacts className="form--icons" />
+        </button>
       </span>
       <span className="lastname">
         <input
@@ -85,7 +87,9 @@ const Signup: React.FC = () => {
           required
         />
         <label>Last name</label>
-        <MdContacts className="form--icons" />
+        <button>
+          <MdContacts className="form--icons" />
+        </button>
       </span>
 
       <span className={emailError ? "email" : "active"}>
@@ -101,9 +105,13 @@ const Signup: React.FC = () => {
         />{" "}
         <label>Email</label>
         {emailError ? (
-          <MdEmail className="form--icons" />
+          <button>
+            <MdEmail className="form--icons" />
+          </button>
         ) : (
-          <MdError color="#ff7782" className="form--icons" />
+          <button>
+            <MdError color="#ff7782" className="form--icons" />
+          </button>
         )}
         {!emailError ? (
           <div className="error">
@@ -125,12 +133,13 @@ const Signup: React.FC = () => {
         />{" "}
         <label>Password</label>
         {passwordType === "password" ? (
-          <AiFillEyeInvisible
-            className="form--icons"
-            onClick={togglePassword}
-          />
+          <button onClick={togglePassword}>
+            <AiFillEyeInvisible className="form--icons" />
+          </button>
         ) : (
-          <AiFillEye className="form--icons" onClick={togglePassword} />
+          <button onClick={togglePassword}>
+            <AiFillEye className="form--icons" />
+          </button>
         )}
         {!isValidPassword ? (
           <div className="error">

@@ -1,5 +1,6 @@
 import "./scss/style.scss";
 import Signup from "./components/Signup";
+import { MdDonutSmall } from "react-icons/md";
 export interface SignupComponent {
   firstname?: string;
   lastname?: string;
@@ -11,7 +12,9 @@ const App: React.FC = () => {
     <section className="Signup">
       <header>
         <nav>
-          <span> BlindInc</span>
+          <span>
+            <MdDonutSmall className="logo__icon" /> BlindInc
+          </span>
           <span> Home</span>
           <span> Join</span>
         </nav>
